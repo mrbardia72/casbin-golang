@@ -47,7 +47,7 @@ func main() {
 
 	bol, _ := e.AddRoleForUser("golang", "data2admin")
 
-	if bol == true {
+	if bol {
 		fmt.Println("creating success")
 	} else {
 		fmt.Println("creating fail")

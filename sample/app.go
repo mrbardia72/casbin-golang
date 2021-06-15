@@ -68,7 +68,7 @@ func bardiaRole(e *casbin.Enforcer) {
 func addPermissionForUser(e *casbin.Enforcer) {
 	bol1, _ := e.AddPermissionForUser("bardiax", "read")
 
-	if bol1 == true {
+	if bol1 {
 		fmt.Println("creating success")
 	} else {
 		fmt.Println("creating fail")
@@ -78,7 +78,7 @@ func addPermissionForUser(e *casbin.Enforcer) {
 func addRoleForUser(e *casbin.Enforcer) {
 	bol, _ := e.AddRoleForUser("bardiax", "data2_admin")
 
-	if bol == true {
+	if bol {
 		fmt.Println("creating success")
 	} else {
 		fmt.Println("creating fail")
@@ -87,7 +87,7 @@ func addRoleForUser(e *casbin.Enforcer) {
 
 func checkPolicy(e *casbin.Enforcer) {
 	hasPolicy := e.HasPolicy("role:user", "data", "read")
-	if hasPolicy == true {
+	if hasPolicy {
 		fmt.Println("ok")
 	} else {
 		fmt.Println("no")
