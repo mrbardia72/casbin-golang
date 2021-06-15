@@ -1,0 +1,5 @@
+g, bardia, role:admin
+g, erfan, role:user
+p, bardia, data1, read
+p, role:admin, data2, write
+p, role:user, data, read
