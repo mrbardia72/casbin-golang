@@ -1,7 +1,7 @@
 package main
 
 import (
-	"casbin-sample/adapter/bardiaadapter"
+	"casbin-sample/adapter/memory"
 	"fmt"
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/model"
@@ -23,33 +23,57 @@ func main() {
 		m = r.sub == p.sub && r.obj == p.obj && r.act == p.act
 `)
 
-	b := []byte{}
+	ss := memory.NewAdapter()
 
-	//var s bardiaadapter.Adapter(&b)
-
-	ss := bardiaadapter.NewAdapter(&b)
 	e, _ := casbin.NewEnforcer(m, ss)
 
-	_, err := e.AddPolicy()
+	_, err := e.AddPolicy("bardia", "chaincode", "read")
 	if err != nil {
-		return
+		panic(fmt.Errorf("error on add policy: %w", err))
 	}
 
-	_, err = e.RemovePolicy()
+	_, err = e.AddPolicy("naser", "chaincode", "read")
 	if err != nil {
-		return
+		panic(fmt.Errorf("error on add policy: %w", err))
 	}
 
-	err = e.SavePolicy()
+	_, err = e.AddPolicy("naser", "chaincode", "write")
 	if err != nil {
-		return
+		panic(fmt.Errorf("error on add policy: %w", err))
 	}
 
-	bol, _ := e.AddRoleForUser("golang", "data2admin")
-
-	if bol {
-		fmt.Println("creating success")
-	} else {
-		fmt.Println("creating fail")
+	// check 1
+	enforce, err := e.Enforce("bardia", "chaincode", "read")
+	if err != nil {
+		panic(fmt.Errorf("error on enforce: %w", err))
 	}
+
+	fmt.Printf("bardia can read chaincode? %v\n", enforce)
+
+	// check 2
+	enforce, err = e.Enforce("bardia", "chaincode", "write")
+	if err != nil {
+		panic(fmt.Errorf("error on enforce: %w", err))
+	}
+
+	fmt.Printf("bardia can write chaincode? %v\n", enforce)
+
+	// check 3
+	enforce, err = e.Enforce("naser", "chaincode", "write")
+	if err != nil {
+		panic(fmt.Errorf("error on enforce: %w", err))
+	}
+
+	fmt.Printf("naser can write chaincode? %v\n", enforce)
+
+
+	_, err = e.RemovePolicy("naser", "chaincode", "write")
+
+	// check 3
+	enforce, err = e.Enforce("naser", "chaincode", "write")
+	if err != nil {
+		panic(fmt.Errorf("error on enforce: %w", err))
+	}
+
+	fmt.Printf("naser can write chaincode? %v\n", enforce)
 }
