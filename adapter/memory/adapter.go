@@ -52,9 +52,9 @@ func (sa *Adapter) RemovePolicy(sec string, ptype string, rule []string) error {
 	cols = append(cols, rule...)
 	line := strings.Join(cols, ", ")
 
-	for i, v:= range sa.lines {
+	for i, v := range sa.lines {
 		if v == line {
-			sa.lines= append(sa.lines[:i], sa.lines[i+1:]...)
+			sa.lines = append(sa.lines[:i], sa.lines[i+1:]...)
 		}
 	}
 

@@ -9,6 +9,8 @@ import (
 
 func main() {
 
+	print := fmt.Println
+
 	m, _ := model.NewModelFromString(`
 		[request_definition]
 		r = sub, obj, act
@@ -16,6 +18,9 @@ func main() {
 		[policy_definition]
 		p = sub, obj, act
 		
+		[role_definition]
+		g = _, _
+
 		[policy_effect]
 		e = some(where (p.eft == allow))
 		
@@ -27,7 +32,12 @@ func main() {
 
 	e, _ := casbin.NewEnforcer(m, ss)
 
-	_, err := e.AddPolicy("bardia", "chaincode", "read")
+	_, err := e.AddPolicy("erfan", "asp", "execute")
+	if err != nil {
+		panic(fmt.Errorf("error on add policy: %w", err))
+	}
+
+	_, err = e.AddPolicy("bardia", "chaincode", "read")
 	if err != nil {
 		panic(fmt.Errorf("error on add policy: %w", err))
 	}
@@ -66,8 +76,7 @@ func main() {
 
 	fmt.Printf("naser can write chaincode? %v\n", enforce)
 
-
-	_, err = e.RemovePolicy("naser", "chaincode", "write")
+	//_, err = e.RemovePolicy("naser", "chaincode", "write")
 
 	// check 3
 	enforce, err = e.Enforce("naser", "chaincode", "write")
@@ -76,4 +85,33 @@ func main() {
 	}
 
 	fmt.Printf("naser can write chaincode? %v\n", enforce)
+
+	print("---------------------------------")
+
+	naserPerms, _ := e.GetImplicitPermissionsForUser("naser")
+	print("naserPerms", naserPerms)
+
+	name := e.GetAllSubjects()
+	print("GetAllSubjects", name)
+
+	allNamedObjects := e.GetAllNamedObjects("p")
+	print("allNamedObjects", allNamedObjects)
+
+	allActions := e.GetAllActions()
+	print("allActions", allActions)
+
+	bol, _ := e.AddRoleForUser("bardiax", "data2_admin")
+
+	if bol {
+		fmt.Println("creating success")
+	} else {
+		fmt.Println("creating fail")
+	}
+
+	allRoles := e.GetAllRoles()
+	print(allRoles)
+
+	bardiaRoles, _ := e.GetRolesForUser("bardiax") //[role:admin]
+	print(bardiaRoles)
+
 }
