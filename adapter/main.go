@@ -8,9 +8,6 @@ import (
 )
 
 func main() {
-
-	print := fmt.Println
-
 	m, _ := model.NewModelFromString(`
 		[request_definition]
 		r = sub, obj, act
@@ -76,7 +73,7 @@ func main() {
 
 	fmt.Printf("naser can write chaincode? %v\n", enforce)
 
-	//_, err = e.RemovePolicy("naser", "chaincode", "write")
+	_, err = e.RemovePolicy("naser", "chaincode", "write")
 
 	// check 3
 	enforce, err = e.Enforce("naser", "chaincode", "write")
@@ -86,19 +83,19 @@ func main() {
 
 	fmt.Printf("naser can write chaincode? %v\n", enforce)
 
-	print("---------------------------------")
+	fmt.Println("---------------------------------")
 
 	naserPerms, _ := e.GetImplicitPermissionsForUser("naser")
-	print("naserPerms", naserPerms)
+	fmt.Println("naserPerms", naserPerms)
 
 	name := e.GetAllSubjects()
-	print("GetAllSubjects", name)
+	fmt.Println("GetAllSubjects", name)
 
 	allNamedObjects := e.GetAllNamedObjects("p")
-	print("allNamedObjects", allNamedObjects)
+	fmt.Println("allNamedObjects", allNamedObjects)
 
 	allActions := e.GetAllActions()
-	print("allActions", allActions)
+	fmt.Println("allActions", allActions)
 
 	bol, _ := e.AddRoleForUser("bardiax", "data2_admin")
 
@@ -109,9 +106,10 @@ func main() {
 	}
 
 	allRoles := e.GetAllRoles()
-	print(allRoles)
+	fmt.Println(allRoles)
 
 	bardiaRoles, _ := e.GetRolesForUser("bardiax") //[role:admin]
-	print(bardiaRoles)
+
+	fmt.Println(bardiaRoles)
 
 }

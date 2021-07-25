@@ -33,7 +33,6 @@ type myPer struct {
 }
 
 func bardiaRole(e *casbin.Enforcer) {
-
 	name := e.GetAllSubjects() //[role:admin role:user]
 
 	bardiaRoles, _ := e.GetRolesForUser("bardia") //[role:admin]

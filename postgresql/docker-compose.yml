@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:13.0-alpine
+    environment:
+      POSTGRES_DB: casbin
+      POSTGRES_USER: casbinus
+      POSTGRES_PASSWORD: casbinpw
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4:5.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: casbin@cb.ir
+      PGADMIN_DEFAULT_PASSWORD: casbinpw
+    depends_on:
+      - postgres
+    ports:
+    - 8000:80
