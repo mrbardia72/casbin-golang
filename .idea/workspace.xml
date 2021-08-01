@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b1bd08a-b8c6-4f1c-8980-1d7043f652d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/casbin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/casbin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/memory/adapter.go" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/memory/adapter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/model/model.conf" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/model/model.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/model/policy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/model/policy.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgresql/z.png" beforeDir="false" afterPath="$PROJECT_DIR$/postgresql/z.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/sample/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/model.conf" beforeDir="false" afterPath="$PROJECT_DIR$/sample/model.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/policy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/sample/policy.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
