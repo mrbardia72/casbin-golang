@@ -33,15 +33,15 @@ type myPer struct {
 }
 
 func bardiaRole(e *casbin.Enforcer) {
-	name := e.GetAllSubjects() 										//[role:admin role:user]
+	name := e.GetAllSubjects() //[role:admin role:user]
 
-	bardiaRoles, _ := e.GetRolesForUser("bardia") 			//[role:admin]
+	bardiaRoles, _ := e.GetRolesForUser("bardia") //[role:admin]
 
 	bardiaPerms, _ := e.GetImplicitPermissionsForUser("bardia") // [[role:admin data1 read] [role:admin data2 write]]
 
 	checkPolicy(e)
 
-	getUsersForRole, _ := e.GetUsersForRole("role:admin") 	//[bardia]
+	getUsersForRole, _ := e.GetUsersForRole("role:admin") //[bardia]
 
 	HasRoleForUser, _ := e.HasRoleForUser("bardia", "role:admin") //true
 

@@ -1,0 +1,4 @@
+p, alice, /project, *
+p, alice, /channel, *
+p, bob, /channel, GET
+p, bob, /project, GET
