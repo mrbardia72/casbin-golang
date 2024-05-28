@@ -88,13 +88,13 @@ func main() {
 	naserPerms, _ := e.GetImplicitPermissionsForUser("naser")
 	fmt.Println("naserPerms", naserPerms)
 
-	name := e.GetAllSubjects()
+	name, _ := e.GetAllSubjects()
 	fmt.Println("GetAllSubjects", name)
 
-	allNamedObjects := e.GetAllNamedObjects("p")
+	allNamedObjects, _ := e.GetAllNamedObjects("p")
 	fmt.Println("allNamedObjects", allNamedObjects)
 
-	allActions := e.GetAllActions()
+	allActions, _ := e.GetAllActions()
 	fmt.Println("allActions", allActions)
 
 	bol, _ := e.AddRoleForUser("bardiax", "data2_admin")
@@ -105,7 +105,7 @@ func main() {
 		fmt.Println("creating fail")
 	}
 
-	allRoles := e.GetAllRoles()
+	allRoles, _ := e.GetAllRoles()
 	fmt.Println(allRoles)
 
 	bardiaRoles, _ := e.GetRolesForUser("bardiax") //[role:admin]

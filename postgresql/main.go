@@ -54,7 +54,7 @@ func main() {
 }
 
 func listRoles(enforcer *casbin.Enforcer) {
-	res := enforcer.GetAllRoles() //get all role type tag "g"
+	res, _ := enforcer.GetAllRoles() //get all role type tag "g"
 	fmt.Println(res)
 
 }

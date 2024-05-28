@@ -33,7 +33,7 @@ type myPer struct {
 }
 
 func bardiaRole(e *casbin.Enforcer) {
-	name := e.GetAllSubjects() //[role:admin role:user]
+	name, _ := e.GetAllSubjects() //[role:admin role:user]
 
 	bardiaRoles, _ := e.GetRolesForUser("bardia") //[role:admin]
 
@@ -85,7 +85,7 @@ func addRoleForUser(e *casbin.Enforcer) {
 }
 
 func checkPolicy(e *casbin.Enforcer) {
-	hasPolicy := e.HasPolicy("role:user", "data", "read")
+	hasPolicy, _ := e.HasPolicy("role:user", "data", "read")
 	if hasPolicy {
 		fmt.Println("ok")
 	} else {

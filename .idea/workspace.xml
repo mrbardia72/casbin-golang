@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b1bd08a-b8c6-4f1c-8980-1d7043f652d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sample-http/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample-http/model.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample-http/policy.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/casbin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/casbin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/sample/app.go" afterDir="false" />
-    </list>
+    <list default="true" id="8b1bd08a-b8c6-4f1c-8980-1d7043f652d2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
