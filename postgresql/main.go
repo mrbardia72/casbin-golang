@@ -9,8 +9,10 @@ import (
 )
 
 func main() {
+	
 	db, err := connectionTODB()
 	adapter := casbinpgadapterx(err, db)
+	
 	enforcer := configModel(err, adapter)
 
 	err1 := enforcer.LoadPolicy()
